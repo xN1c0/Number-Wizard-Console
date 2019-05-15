@@ -45,15 +45,19 @@ public class NumberWizard : MonoBehaviour
          * Dipende dai casi (multiple press - single press)
         */
 
-        if(Input.GetKey(KeyCode.UpArrow)) {
+
+        // getkey -> va se e' premuta
+        // getkeyDOWN -> va solo uan volta (quando si preme)
+        // getkeyUP -> va solo quando si rilascia il tasto premuto
+        if(Input.GetKeyDown(KeyCode.UpArrow)) {
             min = guess;
             NextGuess();
         }
-        else if(Input.GetKey(KeyCode.DownArrow)) {
+        else if(Input.GetKeyDown(KeyCode.DownArrow)) {
             max = guess;
             NextGuess();
         }
-        else if(Input.GetKey(KeyCode.Return)) {
+        else if(Input.GetKeyDown(KeyCode.Return)) {
             Debug.Log("Return is pressed");
             Debug.Log("Aahah i got it ;-\\)");
             StartGame();
